@@ -12,6 +12,7 @@
 <p>
     <a asp-action="CreateDevTask"> Create New Task </a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
@@ -22,7 +23,7 @@
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Project)
+                @Html.DisplayNameFor(model => model.Proyect)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Priority)
@@ -44,7 +45,7 @@
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Project)
+                    @Html.DisplayFor(modelItem => item.Proyect)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Priority)

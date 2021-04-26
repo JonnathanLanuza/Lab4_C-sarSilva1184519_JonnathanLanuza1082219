@@ -15,38 +15,14 @@ namespace Lab4_CésarSilva1184519_JonnathanLanuza1082219.Controllers
 {
     public class HashController : Controller
     {
-        List<Developer> MDeveloperList = new List<Developer>();
-        List<DevData> MDevDataList = new List<DevData>();
-        int[,] array = new int[25, 25];
+        //List<Developer> MDeveloperList = new List<Developer>();
+        //List<DevData> MDevDataList = new List<DevData>();
+        //int[,] array = new int[25, 25];
 
         // GET: HashController
         public ActionResult Index()
         {
-            return View(Singleton.Instance.MDevDataList);
-        }
-
-        [HttpPost]
-        public ActionResult Index(string DevName)
-        {
-            ViewData["SearchName"] = Title;
-            ViewData["SearchLastName"] = Description;
-            ViewData["SearchPosition"] = Project;
-            ViewData["SearchClub"] = Priority;
-            ViewData["SearchSalary"] = Salary;
-            Singleton.Instance.MDevDataList.Clear();
-
-            if (DevName != null)
-            {
-                for (int i = 0; i < Singleton.Instance.MDevDataList.Count() - 1; i++)
-                {
-                    if (Singleton.Instance.MDevDataList[i].DevName == DevName)
-                    {
-                        Singleton.Instance.MDevDataList.Add(Singleton.Instance.MDevDataList[i]);
-                    }
-                }
-                return View(Singleton.Instance.MDevDataList);
-            }
-            return View();
+            return View(Singleton.Instance.MDeveloperList);
         }
 
         // GET: HashController/Details/5
