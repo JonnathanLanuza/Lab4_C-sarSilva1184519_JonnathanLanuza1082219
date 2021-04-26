@@ -17,6 +17,8 @@ namespace Lab4_CésarSilva1184519_JonnathanLanuza1082219.Controllers
         List<string> MDeveloperList = new List<string>();
         List<string> MDevDataList = new List<string>();
         int[,] array = new int[25, 25];
+        int x = 0;
+        int y = 0;
 
         // GET: HashController
         public ActionResult Index()
@@ -34,25 +36,25 @@ namespace Lab4_CésarSilva1184519_JonnathanLanuza1082219.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public ActionResult Index(string Title)
-        //{
-        //    ViewData["SearchName"] = Title;
-        //    Singleton.Instance.MDeveloperList.Clear();
+        [HttpPost]
+        public ActionResult Index(string Title)
+        {
+            ViewData["SearchName"] = Title;
+            Singleton.Instance.MDeveloperList.Clear();
 
-        //    if (Title != null)
-        //    {
-        //        for (int i = 0; i < Singleton.Instance.MDeveloperList.Count() - 1; i++)
-        //        {
-        //            if (Singleton.Instance.MDeveloperList[i].Title == Title)
-        //            {
-        //                Singleton.Instance.MDeveloperList.Add(Singleton.Instance.MDeveloperList[i]);
-        //            }
-        //        }
-        //        return View(Singleton.Instance.MDeveloperList);
-        //    }
-        //    return View();
-        //}
+            if (Title != null)
+            {
+                for (int i = 0; i < Singleton.Instance.MDeveloperList.Count() - 1; i++)
+                {
+                    if (Singleton.Instance.MDeveloperList[i].Title == Title)
+                    {
+                        Singleton.Instance.MDeveloperList.Add(Singleton.Instance.MDeveloperList[i]);
+                    }
+                }
+                return View(Singleton.Instance.MDeveloperList);
+            }
+            return View();
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -71,11 +73,20 @@ namespace Lab4_CésarSilva1184519_JonnathanLanuza1082219.Controllers
                 MDeveloperList.Add(newdev.ToString());
                 Singleton.Instance.MDeveloperList.Add(newdev);
                 return RedirectToAction(nameof(Index));
+                //for (int i = x; i < 25; i++)
+                //{
+                //    for (int j = y; j < 25; j++)
+                //    {
+                //        int[x, y] = Title;
+                //    }
+                //}
             }
             catch
             {
                 return View();
             }
+            //x = x + 1;
+            //y = y + 1;
         }
 
         // GET: HashController/Details/5
