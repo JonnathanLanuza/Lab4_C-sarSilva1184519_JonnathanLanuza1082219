@@ -17,8 +17,8 @@ namespace Lab4_CésarSilva1184519_JonnathanLanuza1082219.Controllers
         List<string> MDeveloperList = new List<string>();
         List<string> MDevDataList = new List<string>();
         int[,] array = new int[25, 25];
-        int x = 0;
-        int y = 0;
+        //int x = 0;
+        //int y = 0;
 
         // GET: HashController
         public ActionResult Index()
