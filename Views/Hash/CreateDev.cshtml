@@ -1,0 +1,30 @@
+﻿@model Lab4_CésarSilva1184519_JonnathanLanuza1082219.Models.DevData
+
+@{
+    ViewData["Title"] = "CreateDev";
+}
+
+<h1>CreateDev</h1>
+
+<h4>DevData</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateDev">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DevName" class="control-label"></label>
+                <input asp-for="DevName" class="form-control" />
+                <span asp-validation-for="DevName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
